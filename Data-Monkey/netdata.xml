@@ -1,31 +1,20 @@
-<?xml version="1.0"?>
-<Container>
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <Date>2016-06-03</Date>
+  <Beta>False</Beta>
   <Category>Tools:System</Category>
   <Name>Netdata</Name>
+  <Project>https://github.com/firehol/netdata/wiki</Project>
   <Repository>titpetric/netdata</Repository>
   <Registry>https://hub.docker.com/r/titpetric/netdata/</Registry>
-  <GitHub>https://github.com/Data-Monkey/unRAID/templates/</GitHub>
-  <TemplateURL>https://github.com/Data-Monkey/unRAID/templates/netdata.xml</TemplateURL>
-  <Icon>https://github.com/Data-Monkey/unRAID/templates/logos/netdata.jpg</Icon>
+  <GitHub></GitHub>
+  <TemplateURL>this file raw url</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/img/netdata.jpg</Icon>
   <Network>host</Network>
   <Privileged>false</Privileged>
   <Support/>
-  <Overview>
-[b]Real-time performance monitoring, done right! [/b][br]
-- real-time, per second updates, snappy refreshes![br]
-- 300+ charts out of the box, 2000+ metrics monitored![br]
-- zero configuration, zero maintenance, zero dependencies![br]
-Live demo: [a href]http://netdata.firehol.org[/a][br]
-  </Overview>
   <WebUI> http://[IP]:[PORT:19999]</WebUI>
   <ExtraParams>--cap-add SYS_PTRACE</ExtraParams>
-  <Description>
-[b]Real-time performance monitoring, done right! [/b][br]
-- real-time, per second updates, snappy refreshes![br]
-- 300+ charts out of the box, 2000+ metrics monitored![br]
-- zero configuration, zero maintenance, zero dependencies![br]
-Live demo: [a href]http://netdata.firehol.org[/a][br]
-  </Description>
   <Networking>
     <Mode>host</Mode>
     <Publish/>
@@ -43,4 +32,32 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]
     </Volume>
   </Data>
   <Environment/>
+
+  <Overview>
+[b]Real-time performance monitoring, done right! [/b][br]
+- real-time, per second updates, snappy refreshes![br]
+- 300+ charts out of the box, 2000+ metrics monitored![br]
+- zero configuration, zero maintenance, zero dependencies![br]
+Live demo: [a href]http://netdata.firehol.org[/a][br]
+  </Overview>
+
+  <Description>
+[b]Real-time performance monitoring, done right! [/b][br]
+- real-time, per second updates, snappy refreshes![br]
+- 300+ charts out of the box, 2000+ metrics monitored![br]
+- zero configuration, zero maintenance, zero dependencies![br]
+Live demo: [a href]http://netdata.firehol.org[/a][br]
+  </Description>
+  
+  <change>
+    [center] [b]Data-Monkey:[/b] Netdata [/center]
+
+[center][font size=4]Change Log[/font][/center]
+
+[font size=3]2016.06.03[/font]
+- Initial release of the netdata template
+    
+    
+  </change>
+
 </Container>
