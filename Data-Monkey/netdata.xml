@@ -12,7 +12,7 @@
   <Icon>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/img/netdata.jpg</Icon>
   <Network>host</Network>
   <Privileged>false</Privileged>
-  <Support/>
+  <Support>https://lime-technology.com/forum/index.php?topic=49534.0</Support>
   <WebUI> http://[IP]:[PORT:19999]</WebUI>
   <ExtraParams>--cap-add SYS_PTRACE</ExtraParams>
   <Networking>
