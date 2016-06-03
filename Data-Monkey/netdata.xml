@@ -49,7 +49,7 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]
 Live demo: [a href]http://netdata.firehol.org[/a][br]
   </Description>
   
-  <change>
+  <changes>
     [center] [b]Data-Monkey:[/b] Netdata [/center]
 
 [center][font size=4]Change Log[/font][/center]
@@ -58,6 +58,6 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]
 - Initial release of the netdata template
     
     
-  </change>
+  </changes>
 
 </Container>
