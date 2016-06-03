@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<Container>
+  <Category>Tools:System</Category>
+  <Name>Netdata</Name>
+  <Repository>titpetric/netdata</Repository>
+  <Registry>https://hub.docker.com/r/titpetric/netdata/</Registry>
+  <GitHub>https://github.com/Data-Monkey/unRAID/templates/</GitHub>
+  <TemplateURL>https://github.com/Data-Monkey/unRAID/templates/netdata.xml</TemplateURL>
+  <Icon>https://github.com/Data-Monkey/unRAID/templates/logos/netdata.jpg</Icon>
+  <Network>host</Network>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Overview>
+[b]Real-time performance monitoring, done right! [/b][br]
+- real-time, per second updates, snappy refreshes![br]
+- 300+ charts out of the box, 2000+ metrics monitored![br]
+- zero configuration, zero maintenance, zero dependencies![br]
+Live demo: [a href]http://netdata.firehol.org[/a][br]
+  </Overview>
+  <WebUI> http://[IP]:[PORT:19999]</WebUI>
+  <ExtraParams>--cap-add SYS_PTRACE</ExtraParams>
+  <Description>
+[b]Real-time performance monitoring, done right! [/b][br]
+- real-time, per second updates, snappy refreshes![br]
+- 300+ charts out of the box, 2000+ metrics monitored![br]
+- zero configuration, zero maintenance, zero dependencies![br]
+Live demo: [a href]http://netdata.firehol.org[/a][br]
+  </Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/proc</HostDir>
+      <ContainerDir>/host/proc</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/sys</HostDir>
+      <ContainerDir>/host/sys</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+</Container>
