@@ -56,11 +56,10 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]
 [b][u][span style='color: #E80000;']Config:[/span][/u][/b][br]
 [u][b]Volume Mapping[/b][/u][br]
 [b]/etc/netdata[/b]: Netdata configuration, usually mapped to /mnt/cache/appdata/netdata[br]
-[b]/proc and /sys[/b]: allow netdata read-only access to the host details[br]
-[br]
+[b]/proc[/b] and [b]/sys[/b]: allow netdata read-only access to the host details[br]
 [br]
 [u][b]Extra Parameters[/b][/u][br]
-[b]--cap-add SYS_PTRACE[/b]: required to give netdata access to host details
+[b]--cap-add SYS_PTRACE[/b]: required to give netdata access to host details[br]
 [b]--log-opt max-size=50m --log-opt max-file=1[/b]: required to keep the log file in check. Does not work in 6.1.x! A manual workaround is required. See support thread.
 
   </Description>
