@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <Date>2016-06-03</Date>
+  <Date>2016-06-06</Date>
   <Beta>False</Beta>
   <Category>Tools:System</Category>
   <Name>Netdata</Name>
@@ -14,12 +14,17 @@
   <Privileged>false</Privileged>
   <Support>https://lime-technology.com/forum/index.php?topic=49534.0</Support>
   <WebUI> http://[IP]:[PORT:19999]</WebUI>
-  <ExtraParams>--cap-add SYS_PTRACE</ExtraParams>
+  <ExtraParams>--cap-add SYS_PTRACE --log-opt max-size=50m --log-opt max-file=1</ExtraParams>
   <Networking>
     <Mode>host</Mode>
     <Publish/>
   </Networking>
   <Data>
+    <Volume>
+      <HostDir>/mnt/cache/appdata/netdata</HostDir>
+      <ContainerDir>/etc/netdata</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
     <Volume>
       <HostDir>/proc</HostDir>
       <ContainerDir>/host/proc</ContainerDir>
@@ -47,12 +52,26 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]
 - 300+ charts out of the box, 2000+ metrics monitored![br]
 - zero configuration, zero maintenance, zero dependencies![br]
 Live demo: [a href]http://netdata.firehol.org[/a][br]
+[br]
+[b][u][span style='color: #E80000;']Config:[/span][/u][/b][br]
+[u][b]Volume Mapping[/b][/u][br]
+[b]/etc/netdata[/b]: Netdata configuration, usually mapped to /mnt/cache/appdata/netdata[br]
+[b]/proc and /sys[/b]: allow netdata read-only access to the host details[br]
+[br]
+[br]
+[u][b]Extra Parameters[/b][/u][br]
+[b]--cap-add SYS_PTRACE[/b]: required to give netdata access to host details
+[b]--log-opt max-size=50m --log-opt max-file=1[/b]: required to keep the log file in check. Does not work in 6.1.x! A manual workaround is required. See support thread.
+
   </Description>
   
   <changes>
     [center] [b]Data-Monkey:[/b] Netdata [/center]
 
 [center][font size=4]Change Log[/font][/center]
+[font size=3]2016.06.06[/font]
+- added config mapping
+- added "log rotation" for 6.2
 
 [font size=3]2016.06.03[/font]
 - Initial release of the netdata template
