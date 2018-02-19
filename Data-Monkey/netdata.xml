@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Container>
-  <Date>2016-06-06</Date>
+  <Date>2018-02-19</Date>
   <Beta>False</Beta>
   <Category>Tools:System</Category>
   <Name>Netdata</Name>
@@ -73,6 +73,9 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]
   <changes>
     [center] [b]Data-Monkey:[/b] Netdata [/center]
 
+    [font size=3]2018.02.19[/font]
+- Added docker name resolving (Vegard Saglien)
+    
 [center][font size=4]Change Log[/font][/center]
 [font size=3]2016.06.06[/font]
 - added config mapping
