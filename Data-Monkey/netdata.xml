@@ -35,6 +35,11 @@
       <ContainerDir>/host/sys</ContainerDir>
       <Mode>ro</Mode>
     </Volume>
+    <Volume>
+      <HostDir>/var/run/docker.sock</HostDir>
+      <ContainerDir>/var/run/docker.sock</ContainerDir>
+      <Mode>ro</Mode>
+     </Volume>
   </Data>
   <Environment/>
 
@@ -57,6 +62,7 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]
 [u][b]Volume Mapping[/b][/u][br]
 [b]/etc/netdata[/b]: Netdata configuration, usually mapped to /mnt/cache/appdata/netdata[br]
 [b]/proc[/b] and [b]/sys[/b]: allow netdata read-only access to the host details[br]
+[b]/var/run/docker.sock[/b]: allow netdata read-only access to docker details[br]
 [br]
 [u][b]Extra Parameters[/b][/u][br]
 [b]--cap-add SYS_PTRACE[/b]: required to give netdata access to host details[br]
