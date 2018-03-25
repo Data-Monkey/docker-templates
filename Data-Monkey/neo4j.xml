@@ -10,12 +10,12 @@
 [center][font size=4]Change Log[/font][/center]
 
 [font size=3]2018.03.25[/font]
-- Initial release of the netdata template
+- Initial release of the neo4j template
     
     
   </changes>  
   <Name>neo4j</Name>
-  <Support>http://lime-technology.com/forum/index.php?topic=45938.0</Support>
+  <Support>https://lime-technology.com/forums/topic/47828-support-data-monkey-netdata/</Support>
   <Description>Neo4j - The Fastest Path To Graph Success</Description>
   <Project>https://neo4j.com/</Project>
   <Overview>Neo4j is a highly scalable, robust, native graph database. It is used in mission-critical apps by thousands of leading startups, enterprises, and governments around the world.</Overview>
