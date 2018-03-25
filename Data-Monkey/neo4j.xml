@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <TemplateURL>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/neo4j.xml</TemplateURL>
+<Beta>False</Beta>
+<Category>Tools:System</Category>
+<Date>2018-03-25</Date>
+<changes>
+    [center] [b]Data-Monkey:[/b] Netdata [/center]
+
+[center][font size=4]Change Log[/font][/center]
+
+[font size=3]2018.03.25[/font]
+- Initial release of the netdata template
+    
+    
+  </changes>  
+  <Name>neo4j</Name>
+  <Support>http://lime-technology.com/forum/index.php?topic=45938.0</Support>
+  <Description>Neo4j - The Fastest Path To Graph Success</Description>
+  <Project>https://neo4j.com/</Project>
+  <Overview>Neo4j - The Fastest Path To Graph Success</Overview>
+  <Registry>https://hub.docker.com/_/neo4j/</Registry>
+  <Repository>_/neo4j</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+    <Variable>
+      <Name>NEO4J_AUTH</Name>
+      <Value>none</Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>7474</HostPort>
+        <ContainerPort>7474</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>7687</HostPort>
+        <ContainerPort>7687</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>      
+    </Publish>
+ </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+<WebUI>http://[IP]:[PORT:7474]/</WebUI>
+  <Icon>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/img/neo4j.png</Icon>
+<DonateText></DonateText>
+<DonateLink></DonateLink>
+<DonateImg></DonateImg>
+<BaseImage></BaseImage>
+</Container>
