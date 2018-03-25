@@ -20,7 +20,7 @@
   <Project>https://neo4j.com/</Project>
   <Overview>Neo4j is a highly scalable, robust, native graph database. It is used in mission-critical apps by thousands of leading startups, enterprises, and governments around the world.</Overview>
   <Registry>https://hub.docker.com/_/neo4j/</Registry>
-  <Repository>_/neo4j</Repository>
+  <Repository>neo4j</Repository>
   <BindTime>true</BindTime>
   <Privileged>false</Privileged>
   <Environment>
