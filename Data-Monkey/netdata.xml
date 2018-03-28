@@ -35,6 +35,11 @@
       <ContainerDir>/host/sys</ContainerDir>
       <Mode>ro</Mode>
     </Volume>
+    <Volume>
+      <HostDir>/var/run/docker.sock</HostDir>
+      <ContainerDir>/var/run/docker.sock</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
   </Data>
   <Environment/>
 
@@ -68,6 +73,9 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]
     [center] [b]Data-Monkey:[/b] Netdata [/center]
 
 [center][font size=4]Change Log[/font][/center]
+[font size=3]2018.03.18[/font]    
+- added /var/run/docker.sock to transalate docker IDs to names
+    
 [font size=3]2016.06.06[/font]
 - added config mapping
 - added "log rotation" for 6.2
