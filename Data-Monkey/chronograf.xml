@@ -10,13 +10,13 @@
 [center][font size=4]Change Log[/font][/center]
 
 [font size=3]2018.04.29[/font]
-- Initial release of the neo4j template
+- Initial release of the Chronograf template
     
     
   </changes>  
   <Name>Chronograf</Name>
-  <Support>https://lime-technology.com/forums/topic/70658-support-data-monkey-neo4j/</Support>
-  <Description>Chronograf - Chronograf is InfluxData’s open source web application</Description>
+  <Support>https://lime-technology.com/forums/topic/71264-support-data-monkey-chronograf/</Support>
+  <Description>Chronograf - Chronograf is the Complete Interface for the InfluxData Platform (including InfluxDB)</Description>
   <Project>https://www.influxdata.com/time-series-platform/chronograf/</Project>
   <Overview>Chronograf is InfluxData’s open source web application. Use Chronograf with the other components of the TICK stack to visualize your monitoring data and easily create alerting and automation rules.</Overview>
   <Registry>https://hub.docker.com/_/chronograf/</Registry>
