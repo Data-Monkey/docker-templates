@@ -22,7 +22,7 @@
   <Data>
     <Volume>
       <HostDir>/mnt/cache/appdata/netdata</HostDir>
-      <ContainerDir>/etc/netdata</ContainerDir>
+      <ContainerDir>/etc/netdata/override</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
     <Volume>
@@ -60,7 +60,7 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]
 [br]
 [b][u][span style='color: #E80000;']Config:[/span][/u][/b][br]
 [u][b]Volume Mapping[/b][/u][br]
-[b]/etc/netdata[/b]: Netdata configuration, usually mapped to /mnt/cache/appdata/netdata[br]
+[b]/etc/netdata/override[/b]: Netdata configuration, usually mapped to /mnt/cache/appdata/netdata[br]
 [b]/proc[/b] and [b]/sys[/b]: allow netdata read-only access to the host details[br]
 [br]
 [u][b]Extra Parameters[/b][/u][br]
@@ -73,6 +73,9 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]
     [center] [b]Data-Monkey:[/b] Netdata [/center]
 
 [center][font size=4]Change Log[/font][/center]
+[font size=3]2018.05.07[/font]    
+- change volume mapping from /etc/netdata to /etc/netdata/override
+
 [font size=3]2018.03.18[/font]    
 - added /var/run/docker.sock to transalate docker IDs to names
     
