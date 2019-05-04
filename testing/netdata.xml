@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Netdata</Name>
+  <Repository>titpetric/netdata</Repository>
+  <Registry>https://hub.docker.com/r/titpetric/netdata/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Privileged>false</Privileged>
+  <Support>https://forums.unraid.net/topic/47828-support-data-monkey-netdata/</Support>
+  <Project>https://github.com/netdata/netdata/wiki</Project>
+  <Overview>&#xD;
+[b]Real-time performance monitoring, done right! [/b][br]&#xD;
+- real-time, per second updates, snappy refreshes![br]&#xD;
+- 300+ charts out of the box, 2000+ metrics monitored![br]&#xD;
+- zero configuration, zero maintenance, zero dependencies![br]&#xD;
+Live demo: [a href]http://netdata.firehol.org[/a][br]&#xD;
+  </Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:19999]</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/netdata.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/img/netdata.jpg</Icon>
+  <ExtraParams>--cap-add SYS_PTRACE --log-opt max-size=50m --log-opt max-file=1</ExtraParams>
+  <PostArgs/>
+  <DateInstalled>1557007663</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <DonateImg/>
+  <MinVer>6.0</MinVer>
+  <Description>&#xD;
+[b]Real-time performance monitoring, done right! [/b][br]&#xD;
+- real-time, per second updates, snappy refreshes![br]&#xD;
+- 300+ charts out of the box, 2000+ metrics monitored![br]&#xD;
+- zero configuration, zero maintenance, zero dependencies![br]&#xD;
+Live demo: [a href]http://netdata.firehol.org[/a][br]&#xD;
+  </Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/netdata</HostDir>
+      <ContainerDir>/etc/netdata/override</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/proc</HostDir>
+      <ContainerDir>/host/proc</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/sys</HostDir>
+      <ContainerDir>/host/sys</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/var/run/docker.sock</HostDir>
+      <ContainerDir>/var/run/docker.sock</ContainerDir>
+      <Mode>ro</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Config Name="Configuration" Target="/etc/netdata/override" Default="/mnt/cache/appdata/netdata" Mode="rw" Description="Container /etc/netdata/override folder" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/netdata</Config>
+  <Config Name="/host/proc" Target="/host/proc" Default="/proc" Mode="ro" Description="Container Path: /host/proc" Type="Path" Display="always" Required="true" Mask="false">/proc</Config>
+  <Config Name="/host/sys" Target="/host/sys" Default="/sys" Mode="ro" Description="Container Path: /host/sys" Type="Path" Display="always" Required="true" Mask="false">/sys</Config>
+  <Config Name="/var/run/docker.sock" Target="/var/run/docker.sock" Default="" Mode="ro" Description="/var/run/docker.sock" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
+</Container>
