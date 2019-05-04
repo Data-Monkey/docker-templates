@@ -18,7 +18,7 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]&#xD;
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:19999]</WebUI>
   <TemplateURL>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/netdata.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/img/netdata.jpg</Icon>
+  <Icon>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/img/netdata.png</Icon>
   <ExtraParams>--cap-add SYS_PTRACE --log-opt max-size=50m --log-opt max-file=1</ExtraParams>
   <PostArgs/>
   <DateInstalled>1557007663</DateInstalled>
