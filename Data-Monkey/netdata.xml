@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <Container version="2">
-  <Name>netdata_official</Name>
+  <Name>netdata</Name>
   <Repository>netdata/netdata</Repository>
   <Registry>https://hub.docker.com/r/netdata/netdata</Registry>
   <Network>host</Network>
