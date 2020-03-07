@@ -1,36 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Container>
-  <TemplateURL>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/neo4j.xml</TemplateURL>
-<Beta>False</Beta>
-<Category>Tools:System</Category>
-<Date>2018-03-25</Date>
-<changes>
-    [center] [b]Data-Monkey:[/b] Netdata [/center]
-
-[center][font size=4]Change Log[/font][/center]
-
-[font size=3]2018.03.25[/font]
-- Initial release of the neo4j template
-    
-    
-  </changes>  
+<?xml version="1.0"?>
+<Container version="2">
   <Name>neo4j</Name>
-  <Support>https://lime-technology.com/forums/topic/70658-support-data-monkey-neo4j/</Support>
-  <Description>Neo4j - The Fastest Path To Graph Success</Description>
-  <Project>https://neo4j.com/</Project>
-  <Overview>Neo4j is a highly scalable, robust, native graph database. It is used in mission-critical apps by thousands of leading startups, enterprises, and governments around the world.</Overview>
-  <Registry>https://hub.docker.com/_/neo4j/</Registry>
   <Repository>neo4j</Repository>
-  <BindTime>true</BindTime>
+  <Registry>https://hub.docker.com/_/neo4j/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Environment>
-    <Variable>
-      <Name>NEO4J_AUTH</Name>
-      <Value>none</Value>
-    </Variable>
-  </Environment>
+  <Support>https://lime-technology.com/forums/topic/70658-support-data-monkey-neo4j</Support>
+  <Project>https://neo4j.com/</Project>
+  <Overview>Neo4j is a highly scalable, robust native graph database.   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Category>Tools:</Category>
+  <WebUI>http://[IP]:[PORT:7474]/</WebUI>
+  <TemplateURL/>
+  <Icon>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/img/neo4j.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1583547610</DateInstalled>
+  <DonateText>Thanks for the coffee</DonateText>
+  <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;amp;amp;business=MDUDJ3BAXMJ4C&amp;amp;amp;amp;item_name=thanks+for+the+coffee%21&amp;amp;amp;amp;currency_code=AUD&amp;amp;amp;amp;source=url</DonateLink>
+  <Description>Neo4j is a highly scalable, robust native graph database.   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
   <Networking>
-    <Mode>bridge</Mode>
+    <Mode>host</Mode>
     <Publish>
       <Port>
         <HostPort>7474</HostPort>
@@ -41,20 +33,40 @@
         <HostPort>7687</HostPort>
         <ContainerPort>7687</ContainerPort>
         <Protocol>tcp</Protocol>
-      </Port>      
+      </Port>
     </Publish>
- </Networking>
+  </Networking>
   <Data>
     <Volume>
-      <HostDir></HostDir>
+      <HostDir>/mnt/user/appdata/neo4j/data/</HostDir>
       <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
-<WebUI>http://[IP]:[PORT:7474]/</WebUI>
-  <Icon>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/img/neo4j.png</Icon>
-<DonateText></DonateText>
-<DonateLink></DonateLink>
-<DonateImg></DonateImg>
-<BaseImage></BaseImage>
+  <Environment>
+    <Variable>
+      <Value>none</Value>
+      <Name>NEO4J_AUTH</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="data" Target="/data" Default="" Mode="rw" Description="Container Path: /data" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/neo4j/data/</Config>
+  <Config Name="WebUI" Target="7474" Default="7474" Mode="tcp" Description="WebUI HTTP Port" Type="Port" Display="always" Required="false" Mask="false">7474</Config>
+  <Config Name="Bolt" Target="7687" Default="7687" Mode="tcp" Description="Bolt access to the Neo4j API" Type="Port" Display="always" Required="false" Mask="false">7687</Config>
+  <Config Name="NEO4J_AUTH" Target="NEO4J_AUTH" Default="none" Mode="" Description="Container Variable: NEO4J_AUTH" Type="Variable" Display="always" Required="false" Mask="false">none</Config>
+
+<changes>
+[center] [b]Data-Monkey:[/b] neo4j [/center]
+
+[center][font size=4]Change Log[/font][/center]
+
+[font size=3]2020.03.07[/font]
+- some cosmetic changes
+
+[font size=3]2018.03.25[/font]
+- Initial release of the neo4j template
+  </changes>  
+
+
 </Container>
