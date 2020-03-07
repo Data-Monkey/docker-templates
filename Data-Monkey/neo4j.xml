@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://lime-technology.com/forums/topic/70658-support-data-monkey-neo4j</Support>
   <Project>https://neo4j.com/</Project>
-  <Overview>Neo4j is a highly scalable, robust native graph database.   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Overview>
+  <Overview>Neo4j is a highly scalable, robust native graph database.</Overview>
   <Category>Tools:</Category>
   <WebUI>http://[IP]:[PORT:7474]/</WebUI>
   <TemplateURL/>
@@ -20,7 +20,7 @@
   <DateInstalled>1583547610</DateInstalled>
   <DonateText>Thanks for the coffee</DonateText>
   <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;amp;amp;business=MDUDJ3BAXMJ4C&amp;amp;amp;amp;item_name=thanks+for+the+coffee%21&amp;amp;amp;amp;currency_code=AUD&amp;amp;amp;amp;source=url</DonateLink>
-  <Description>Neo4j is a highly scalable, robust native graph database.   Converted By Community Applications   Always verify this template (and values) against the dockerhub support page for the container</Description>
+  <Description>Neo4j is a highly scalable, robust native graph database.</Description>
   <Networking>
     <Mode>host</Mode>
     <Publish>
