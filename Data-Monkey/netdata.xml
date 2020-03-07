@@ -79,7 +79,7 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]</Description>
 [center] [b]Data-Monkey:[/b] Netdata [/center]
 
 [center][font size=4]Change Log[/font][/center]
-[font size=3]2019.05.05[/font]    
+[font size=3]2020.03.07[/font]    
 - change to official docker repo 
 - added variable to opt out of anonymous tracking
 - added group id to get access to doker stats 
