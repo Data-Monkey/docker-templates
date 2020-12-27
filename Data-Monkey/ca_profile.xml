@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Maintainer>
+  <Icon>https://raw.githubusercontent.com/ich777/docker-templates/master/ich777/images/avatar.jpg</Icon>
+  <Profile>
+    I am not attempting to create containers, but I have built a few templates to make life a little easier. If you are looking for details on the containers, please check out the individual DockerHub pages.
+    There is usually also a support thread linked in the respectiuve template. 
+  </Profile>
+  <DonateLink>paypal.me/DataMonkeyDonation</DonateLink>
+  <DonateText>If my template helped you get started, please consider Donating.</DonateText>
+</Maintainer>
