@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Plex-Meta-Manager</Name>
+  <Repository>meisnate12/plex-meta-manager</Repository>
+  <Registry>https://hub.docker.com/r/meisnate12/plex-meta-manager/</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Installation</Support>
+  <Project>https://github.com/meisnate12/Plex-Meta-Manager/wiki/</Project>
+  <Overview>[b]Python script to update metadata and automatically build collections.[/b][br]</Overview>
+  <Category>Tools: Status:Stable</Category>
+  <WebUI></WebUI>
+  <TemplateURL/>
+  <Icon></Icon>
+  <ExtraParams></ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText>Thanks</DonateText>
+  <DonateLink>https://www.paypal.com/donate?business=JTK3CVKF3ZHP2&item_name=Plex+Meta+Manager&currency_code=USD</DonateLink>
+  <Description></Description>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>6:00</Value>
+      <Name>time</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>=</Value>
+      <Name>divider</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>150</Value>
+      <Name>width</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Time to Run" Target="time" Default="6:00" Mode="" Description="Container Variable: time" Type="Variable" Display="always" Required="false" Mask="false">6:00</Config>
+  <Config Name="Divider Character" Target="divider" Default="" Mode="" Description="Container Variable: divider" Type="Variable" Display="always" Required="false" Mask="false">=</Config>
+  <Config Name="Screen Width" Target="width" Default="" Mode="" Description="Container Variable: width" Type="Variable" Display="always" Required="false" Mask="false">150</Config>
+  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/plex-meta-manager</Config>
+
+  <changes></changes>
+</Container>
