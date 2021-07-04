@@ -9,7 +9,7 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Installation</Support>
   <Project>https://github.com/meisnate12/Plex-Meta-Manager/wiki/</Project>
-  <Overview>[b]Python script to update metadata and automatically build collections.[/b][br]</Overview>
+  <Overview>Python script to update metadata and automatically build collections.</Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI></WebUI>
   <TemplateURL/>
