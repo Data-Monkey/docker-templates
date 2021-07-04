@@ -18,7 +18,7 @@
   <PostArgs/>
   <CPUset/>
   <DonateText>Thanks</DonateText>
-  <DonateLink>https://www.paypal.com/donate?business=JTK3CVKF3ZHP2&item_name=Plex+Meta+Manager&currency_code=USD</DonateLink>
+  <DonateLink>https://www.paypal.com/donate?business=JTK3CVKF3ZHP2&amp;item_name=Plex+Meta+Manager&amp;currency_code=USD</DonateLink>
   <Description></Description>
   <Networking>
     <Mode>host</Mode>
