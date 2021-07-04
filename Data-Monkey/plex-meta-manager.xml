@@ -26,7 +26,7 @@
   </Networking>
   <Data>
     <Volume>
-      <HostDir></HostDir>
+      <HostDir>/mnt/user/appdata/plex-meta-manager</HostDir>
       <ContainerDir>/config</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
@@ -52,7 +52,7 @@
   <Config Name="Time to Run" Target="time" Default="6:00" Mode="" Description="Container Variable: time" Type="Variable" Display="always" Required="false" Mask="false">6:00</Config>
   <Config Name="Divider Character" Target="divider" Default="" Mode="" Description="Container Variable: divider" Type="Variable" Display="always" Required="false" Mask="false">=</Config>
   <Config Name="Screen Width" Target="width" Default="" Mode="" Description="Container Variable: width" Type="Variable" Display="always" Required="false" Mask="false">150</Config>
-  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/cache/appdata/plex-meta-manager</Config>
+  <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/plex-meta-manager</Config>
 
   <changes></changes>
 </Container>
