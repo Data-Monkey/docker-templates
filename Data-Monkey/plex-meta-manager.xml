@@ -9,7 +9,11 @@
   <Privileged>false</Privileged>
   <Support>https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Installation</Support>
   <Project>https://github.com/meisnate12/Plex-Meta-Manager/wiki/</Project>
-  <Overview>Python script to update metadata and automatically build collections.</Overview>
+  <Overview>
+    Python script to update metadata and automatically build collections.
+    Follow instructions here to configure and use this docker.
+    https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Installation
+  </Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI></WebUI>
   <TemplateURL/>
@@ -43,7 +47,7 @@
       <Mode/>
     </Variable>
     <Variable>
-      <Value>150</Value>
+      <Value>200</Value>
       <Name>width</Name>
       <Mode/>
     </Variable>
@@ -51,7 +55,7 @@
   <Labels/>
   <Config Name="Time to Run" Target="time" Default="6:00" Mode="" Description="Container Variable: time" Type="Variable" Display="always" Required="false" Mask="false">6:00</Config>
   <Config Name="Divider Character" Target="divider" Default="" Mode="" Description="Container Variable: divider" Type="Variable" Display="always" Required="false" Mask="false">=</Config>
-  <Config Name="Screen Width" Target="width" Default="" Mode="" Description="Container Variable: width" Type="Variable" Display="always" Required="false" Mask="false">150</Config>
+  <Config Name="Screen Width" Target="width" Default="" Mode="" Description="Container Variable: width" Type="Variable" Display="always" Required="false" Mask="false">200</Config>
   <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/plex-meta-manager</Config>
 
   <changes></changes>
