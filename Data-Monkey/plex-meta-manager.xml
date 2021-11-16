@@ -38,24 +38,24 @@
   <Environment>
     <Variable>
       <Value>6:00</Value>
-      <Name>time</Name>
+      <Name>PMM_TIME</Name>
       <Mode/>
     </Variable>
     <Variable>
       <Value>=</Value>
-      <Name>divider</Name>
+      <Name>PMM_DIVIDER</Name>
       <Mode/>
     </Variable>
     <Variable>
       <Value>200</Value>
-      <Name>width</Name>
+      <Name>PMM_WIDTH</Name>
       <Mode/>
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Time to Run" Target="time" Default="6:00" Mode="" Description="Container Variable: time" Type="Variable" Display="always" Required="false" Mask="false">6:00</Config>
-  <Config Name="Divider Character" Target="divider" Default="" Mode="" Description="Container Variable: divider" Type="Variable" Display="always" Required="false" Mask="false">=</Config>
-  <Config Name="Screen Width" Target="width" Default="" Mode="" Description="Container Variable: width" Type="Variable" Display="always" Required="false" Mask="false">200</Config>
+  <Config Name="Time to Run" Target="PMM_TIME" Default="6:00" Mode="" Description="Container Variable: PMM_TIME" Type="Variable" Display="always" Required="false" Mask="false">6:00</Config>
+  <Config Name="Divider Character" Target="PMM_DIVIDER" Default="" Mode="" Description="Container Variable: PMM_DIVIDER" Type="Variable" Display="always" Required="false" Mask="false">=</Config>
+  <Config Name="Screen Width" Target="PMM_WIDTH" Default="" Mode="" Description="Container Variable: PMM_WIDTH" Type="Variable" Display="always" Required="false" Mask="false">200</Config>
   <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/plex-meta-manager</Config>
 
   <changes></changes>
