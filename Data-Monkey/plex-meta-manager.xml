@@ -17,7 +17,7 @@
   <Category>Tools: Status:Stable</Category>
   <WebUI></WebUI>
   <TemplateURL/>
-  <Icon></Icon>
+  <Icon>https://metamanager.wiki/en/latest/_static/pmm.png</Icon>
   <ExtraParams></ExtraParams>
   <PostArgs/>
   <CPUset/>
