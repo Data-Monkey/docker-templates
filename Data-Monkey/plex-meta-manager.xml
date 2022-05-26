@@ -17,7 +17,7 @@
   <Category>Tools: Status:Stable</Category>
   <WebUI></WebUI>
   <TemplateURL/>
-  <Icon>https://metamanager.wiki/en/latest/_static/pmm.png</Icon>
+  <Icon>https://raw.githubusercontent.com/meisnate12/Plex-Meta-Manager/master/docs/_static/favicon.png</Icon>
   <ExtraParams></ExtraParams>
   <PostArgs/>
   <CPUset/>
