@@ -5,14 +5,14 @@
   <Registry>https://hub.docker.com/r/meisnate12/plex-meta-manager/</Registry>
   <Network>host</Network>
   <MyIP/>
-  <Shell>sh</Shell>
+  <Shell>bash</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Installation</Support>
+  <Support>https://github.com/meisnate12/Plex-Meta-Manager#readme</Support>
   <Project>https://github.com/meisnate12/Plex-Meta-Manager/wiki/</Project>
   <Overview>
     Python script to update metadata and automatically build collections.
     Follow instructions here to configure and use this docker.
-    https://github.com/meisnate12/Plex-Meta-Manager/wiki/unRAID-Installation
+    https://metamanager.wiki/en/latest/home/guides/unraid.html
   </Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI></WebUI>
@@ -37,7 +37,7 @@
   </Data>
   <Environment>
     <Variable>
-      <Value>6:00</Value>
+      <Value>5:00</Value>
       <Name>PMM_TIME</Name>
       <Mode/>
     </Variable>
@@ -47,16 +47,19 @@
       <Mode/>
     </Variable>
     <Variable>
-      <Value>200</Value>
+      <Value>100</Value>
       <Name>PMM_WIDTH</Name>
       <Mode/>
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="Time to Run" Target="PMM_TIME" Default="6:00" Mode="" Description="Container Variable: PMM_TIME" Type="Variable" Display="always" Required="false" Mask="false">6:00</Config>
+  <Config Name="Time to Run" Target="PMM_TIME" Default="5:00" Mode="" Description="Container Variable: PMM_TIME" Type="Variable" Display="always" Required="false" Mask="false">5:00</Config>
   <Config Name="Divider Character" Target="PMM_DIVIDER" Default="" Mode="" Description="Container Variable: PMM_DIVIDER" Type="Variable" Display="always" Required="false" Mask="false">=</Config>
   <Config Name="Screen Width" Target="PMM_WIDTH" Default="" Mode="" Description="Container Variable: PMM_WIDTH" Type="Variable" Display="always" Required="false" Mask="false">200</Config>
   <Config Name="Config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/plex-meta-manager</Config>
+  <Config Name="PUID" Target="PUID" Default="99" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">99</Config>
+  <Config Name="PGID" Target="PGID" Default="100" Mode="" Description="" Type="Variable" Display="advanced-hide" Required="false" Mask="false">100</Config>
+  <Config Name="UMASK" Target="UMASK" Default="002" Mode="" Description="" Type="Variable" Display="advanced" Required="false" Mask="false">002</Config>
 
   <changes></changes>
 </Container>
