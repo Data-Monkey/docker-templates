@@ -5,30 +5,42 @@
   <Registry>https://hub.docker.com/r/netdata/netdata</Registry>
   <Network>host</Network>
   <MyIP/>
-  <Shell>sh</Shell>
+  <Shell>bash</Shell>
   <Privileged>false</Privileged>
   <Support>https://forums.unraid.net/topic/47828-support-data-monkey-netdata/</Support>
+  <Branch>
+    <Tag>stable</Tag>
+    <TagDescription>Stable Netdata releases</TagDescription>
+  </Branch>
+  <Branch>
+    <Tag>edge</Tag>
+    <TagDescription>Edge (Nightly) releases</TagDescription>
+  </Branch>
   <Project>https://docs.netdata.cloud/</Project>
-  <Overview>[b]Real-time performance monitoring, done right! [/b][br]&amp;amp;#xD;&#xD;
-- real-time, per second updates, snappy refreshes![br]&amp;amp;#xD;&#xD;
-- 300+ charts out of the box, 2000+ metrics monitored![br]&amp;amp;#xD;&#xD;
-- zero configuration, zero maintenance, zero dependencies![br]&amp;amp;#xD;&#xD;
-Live demo: [a href]http://netdata.firehol.org[/a][br]</Overview>
+  <Overview>Real-time performance monitoring, done right!&#xD;
+Real-time, per second updates, snappy refreshes!&#xD;
+300+ charts out of the box, 2000+ metrics monitored!&#xD;
+Zero configuration, zero maintenance, zero dependencies!&#xD;
+&#xD;
+Live demo: https://learn.netdata.cloud/docs/live-demo&#xD;
+  </Overview>
   <Category>Tools: Status:Stable</Category>
   <WebUI>http://[IP]:[PORT:19999]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/img/netdata.png</Icon>
-  <ExtraParams>--cap-add SYS_PTRACE --security-opt apparmor=unconfined --log-opt max-size=200m --log-opt max-file=1</ExtraParams>
+  <ExtraParams>--cap-add SYS_PTRACE --cap-add SYS_ADMIN --security-opt apparmor=unconfined --log-opt max-size=200m --log-opt max-file=1</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1583539426</DateInstalled>
   <DonateText>Thanks for the coffee</DonateText>
   <DonateLink>https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=MDUDJ3BAXMJ4C&amp;amp;item_name=thanks+for+the+coffee%21&amp;amp;currency_code=AUD&amp;amp;source=url</DonateLink>
-  <Description>[b]Real-time performance monitoring, done right! [/b][br]&amp;amp;#xD;&#xD;
-- real-time, per second updates, snappy refreshes![br]&amp;amp;#xD;&#xD;
-- 300+ charts out of the box, 2000+ metrics monitored![br]&amp;amp;#xD;&#xD;
-- zero configuration, zero maintenance, zero dependencies![br]&amp;amp;#xD;&#xD;
-Live demo: [a href]http://netdata.firehol.org[/a][br]</Description>
+  <Description>Real-time performance monitoring, done right!&#xD;
+Real-time, per second updates, snappy refreshes!&#xD;
+300+ charts out of the box, 2000+ metrics monitored!&#xD;
+Zero configuration, zero maintenance, zero dependencies!&#xD;
+&#xD;
+Live demo: https://learn.netdata.cloud/docs/live-demo&#xD;
+  </Description>
   <Networking>
     <Mode>host</Mode>
     <Publish/>
@@ -63,45 +75,59 @@ Live demo: [a href]http://netdata.firehol.org[/a][br]</Description>
     </Variable>
   </Environment>
   <Labels/>
-  <Config Name="proc" Target="/host/proc" Default="/proc" Mode="ro" Description="Container Path: /host/proc" Type="Path" Display="always" Required="false" Mask="false">/proc</Config>
-  <Config Name="sys" Target="/host/sys" Default="/host/sys" Mode="ro" Description="Container Path: /host/sys" Type="Path" Display="always" Required="false" Mask="false">/sys</Config>
-  <Config Name="doker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="Container Path: /var/run/docker.sock" Type="Path" Display="always" Required="false" Mask="false">/var/run/docker.sock</Config>
-  <Config Name="PGID" Target="PGID" Default="281" Mode="" Description="If you want to have your container names resolved by netdata it needs to have access to docker group. To achive that just add environment variable PGID=999 to netdata container, where 999 is a docker group id from your host. This number can be found by running:&#13;&#10;&#13;&#10;grep docker /etc/group | cut -d ':' -f 3" Type="Variable" Display="always" Required="false" Mask="false">281</Config>
-  <Config Name="Do Not Track" Target="DO_NOT_TRACK" Default="0" Mode="" Description="Set to 1 to stop anonymous tracking&#13;&#10;( https://docs.netdata.cloud/docs/anonymous-statistics/#opt-out )" Type="Variable" Display="always" Required="false" Mask="false">0</Config>
+  <Config Name="PGID" Target="PGID" Default="281" Mode="" Description="If you want to have your container names resolved by netdata it needs to have access to docker group. To achive that just add environment variable PGID=999 to netdata container, where 999 is a docker group id from your host. This number can be found by running:&#13;&#10;&#13;&#10;grep docker /etc/group | cut -d ':' -f 3" Type="Variable" Display="always" Required="true" Mask="false">281</Config>
+  <Config Name="Do Not Track" Target="DO_NOT_TRACK" Default="0" Mode="" Description="Set to 1 to stop anonymous tracking (https://docs.netdata.cloud/docs/anonymous-statistics/#opt-out)" Type="Variable" Display="always" Required="false" Mask="false">1</Config>
+  <Config Name="Claim Token" Target="NETDATA_CLAIM_TOKEN" Default="" Mode="" Description="Only needed if you want to use NetData Cloud.  Get this from https://app.netdata.cloud, Integrations, Docker &amp;amp; Kubernetes, Docker.  Then copy the value of NETDATA_CLAIM_TOKEN without the trailing \" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Claim URL" Target="NETDATA_CLAIM_URL" Default="" Mode="" Description="Only needed if you want to use NetData Cloud.  Get this from https://app.netdata.cloud, Integrations, Docker &amp;amp; Kubernetes, Docker.  Then copy the value of NETDATA_CLAIM_URL without the trailing \" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Claim Rooms" Target="NETDATA_CLAIM_ROOMS" Default="" Mode="" Description="Only needed if you want to use NetData Cloud.  Get this from https://app.netdata.cloud, Integrations, Docker &amp;amp; Kubernetes, Docker.  Then copy the value of NETDATA_CLAIM_ROOMS without the trailing \" Type="Variable" Display="always" Required="false" Mask="false"></Config>
+  <Config Name="Extra Packages" Target="NETDATA_EXTRA_APK_PACKAGES" Default="" Mode="" Description="Any extra packages that are needed (https://learn.netdata.cloud/docs/installing/docker#adding-extra-packages-at-runtime)" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="proc" Target="/host/proc" Default="/proc" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/proc</Config>
+  <Config Name="sys" Target="/host/sys" Default="/host/sys" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/sys</Config>
+  <Config Name="doker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="os-release" Target="/host/etc/os-release" Default="/etc/os-release" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/os-release</Config>
+  <Config Name="passwd" Target="/host/etc/passwd" Default="/etc/passwd" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/passwd</Config>
+  <Config Name="group" Target="/host/etc/group" Default="/etc/group" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/group</Config>
+  <Config Name="NetData_Config" Target="/etc/netdata" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/netdata/config</Config>
+  <Config Name="NetData_Lib" Target="/var/lib/netdata" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/netdata/lib</Config>
+  <Config Name="NetData_Cache" Target="/var/cache/netdata" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/netdata/cache</Config>
+  <Changes>
+###2023.09.28
+- added config, lib, and cache mounts under appdata to match the official docker
+- added added path mappings for os-release, passwd, and group files to match official docker
+- hid all path and volume mappings under "show more settings" since most people will not need these
+- added variables needed for claiming docker for netdata cloud
+- added branch section for selection between stabled and edge
+- reformated change-log on template to markdown
+- cleaned up formatting in overview and description
+- fixed demo link
 
-  <changes>
-[center] [b]Data-Monkey:[/b] Netdata [/center]
-    
-[center][font size=4]Change Log[/font][/center]
-[font size=3]2020.05.02[/font]    
+###2020.05.02
 - removed config dir. See support forum for example of configuring netdata
     
-[center][font size=4]Change Log[/font][/center]
-[font size=3]2020.03.07[/font]    
+###2020.03.07   
 - change to official docker repo 
 - added variable to opt out of anonymous tracking
 - added group id to get access to doker stats 
 - fixed some links
 - updated logo again
 
-[font size=3]2019.05.05[/font]    
+###2019.05.05 
 - change volume mapping from /mnt/cache/netdata to /mnt/user/netdata
 - change to new logo
 - updated some links to the new urls    
 
-[font size=3]2018.05.07[/font]    
+###2018.05.07   
 - change volume mapping from /etc/netdata to /etc/netdata/override
 
-[font size=3]2018.03.18[/font]    
+###2018.03.18
 - added /var/run/docker.sock to transalate docker IDs to names
     
-[font size=3]2016.06.06[/font]
+###2016.06.06
 - added config mapping
 - added "log rotation" for 6.2
 
-[font size=3]2016.06.03[/font]
+###2016.06.03
 - Initial release of the netdata template
-    
-    
-  </changes>
+
+  </Changes>
 </Container>
