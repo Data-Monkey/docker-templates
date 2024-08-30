@@ -39,7 +39,7 @@ Real-time, per second updates, snappy refreshes!&#xD;
 300+ charts out of the box, 2000+ metrics monitored!&#xD;
 Zero configuration, zero maintenance, zero dependencies!&#xD;
 &#xD;
-Network be set as <strong>'Host'</strong> for proper monitoring!&#xD;
+Network must be set as <strong>'Host'</strong> for proper monitoring!&#xD;
 &#xD;
 Live demo: https://learn.netdata.cloud/docs/live-demo&#xD;
   </Description>
