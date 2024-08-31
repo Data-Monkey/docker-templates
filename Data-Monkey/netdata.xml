@@ -28,7 +28,7 @@ Live demo: https://learn.netdata.cloud/docs/live-demo&#xD;
   <WebUI>http://[IP]:[PORT:19999]</WebUI>
   <TemplateURL/>
   <Icon>https://raw.githubusercontent.com/Data-Monkey/docker-templates/master/Data-Monkey/img/netdata.png</Icon>
-  <ExtraParams>--cap-add SYS_PTRACE --cap-add SYS_ADMIN --security-opt apparmor=unconfined --log-opt max-size=200m --log-opt max-file=1</ExtraParams>
+  <ExtraParams>--pid host --cap-add SYS_PTRACE --cap-add SYS_ADMIN --security-opt apparmor=unconfined --log-opt max-size=200m --log-opt max-file=1</ExtraParams>
   <PostArgs/>
   <CPUset/>
   <DateInstalled>1583539426</DateInstalled>
@@ -38,6 +38,8 @@ Live demo: https://learn.netdata.cloud/docs/live-demo&#xD;
 Real-time, per second updates, snappy refreshes!&#xD;
 300+ charts out of the box, 2000+ metrics monitored!&#xD;
 Zero configuration, zero maintenance, zero dependencies!&#xD;
+&#xD;
+Network must be set as <strong>'Host'</strong> for proper monitoring!&#xD;
 &#xD;
 Live demo: https://learn.netdata.cloud/docs/live-demo&#xD;
   </Description>
@@ -81,19 +83,28 @@ Live demo: https://learn.netdata.cloud/docs/live-demo&#xD;
   <Config Name="Claim URL" Target="NETDATA_CLAIM_URL" Default="" Mode="" Description="Only needed if you want to use NetData Cloud.  Get this from https://app.netdata.cloud, Integrations, Docker &amp;amp; Kubernetes, Docker.  Then copy the value of NETDATA_CLAIM_URL without the trailing \" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="Claim Rooms" Target="NETDATA_CLAIM_ROOMS" Default="" Mode="" Description="Only needed if you want to use NetData Cloud.  Get this from https://app.netdata.cloud, Integrations, Docker &amp;amp; Kubernetes, Docker.  Then copy the value of NETDATA_CLAIM_ROOMS without the trailing \" Type="Variable" Display="always" Required="false" Mask="false"></Config>
   <Config Name="Extra Packages" Target="NETDATA_EXTRA_DEB_PACKAGES" Default="" Mode="" Description="Any extra packages that are needed (https://learn.netdata.cloud/docs/installing/docker#adding-extra-packages-at-runtime)" Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="proc" Target="/host/proc" Default="/proc" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/proc</Config>
-  <Config Name="sys" Target="/host/sys" Default="/host/sys" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/sys</Config>
-  <Config Name="doker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
-  <Config Name="os-release" Target="/host/etc/os-release" Default="/etc/os-release" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/os-release</Config>
   <Config Name="passwd" Target="/host/etc/passwd" Default="/etc/passwd" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/passwd</Config>
   <Config Name="group" Target="/host/etc/group" Default="/etc/group" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/group</Config>
+  <Config Name="localtime" Target="/etc/localtime" Default="/etc/localtime" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/localtime</Config>
+  <Config Name="proc" Target="/host/proc" Default="/proc" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/proc</Config>
+  <Config Name="sys" Target="/host/sys" Default="/host/sys" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/sys</Config>
+  <Config Name="os-release" Target="/host/etc/os-release" Default="/etc/os-release" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/etc/os-release</Config>
+  <Config Name="log" Target="/host/var/log" Default="/var/log" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/var/log</Config>
+  <Config Name="doker.sock" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/var/run/docker.sock</Config>
+  <Config Name="dbus" Target="/run/dbus" Default="/run/dbus" Mode="ro" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/run/dbus</Config>
   <Config Name="NetData_Config" Target="/etc/netdata" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/netdata/config</Config>
   <Config Name="NetData_Lib" Target="/var/lib/netdata" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/netdata/lib</Config>
   <Config Name="NetData_Cache" Target="/var/cache/netdata" Default="" Mode="rw" Description="" Type="Path" Display="advanced" Required="true" Mask="false">/mnt/user/appdata/netdata/cache</Config>
   <Changes>
+###2024.08.30
+- added path mappings for localtime, dbus and log directory to match official docker
+- added pid host launch option to match official docker
+- reordered path mappings to match official docker
+- added note to clarify network mode host to be required
+    
 ###2023.09.28
 - added config, lib, and cache mounts under appdata to match the official docker
-- added added path mappings for os-release, passwd, and group files to match official docker
+- added path mappings for os-release, passwd, and group files to match official docker
 - hid all path and volume mappings under "show more settings" since most people will not need these
 - added variables needed for claiming docker for netdata cloud
 - added branch section for selection between stabled and edge
